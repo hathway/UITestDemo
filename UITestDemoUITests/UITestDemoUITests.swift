@@ -37,7 +37,19 @@ class UITestDemoUITests: XCTestCase {
         backButton.tap()
         app.buttons["Blue"].tap()
         backButton.tap()
+    }
+ 
+    func testBlueBlueOrange() {
+        let app = XCUIApplication()
+        let blueButton = app.buttons["Blue"]
+        blueButton.tap()
         
+        let backButton = app.navigationBars["UIView"].childrenMatchingType(.Button).matchingIdentifier("Back").elementAtIndex(0)
+        backButton.tap()
+        blueButton.tap()
+        backButton.tap()
+        app.buttons["Orange"].tap()
+        backButton.tap()
     }
     
 }
